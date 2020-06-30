@@ -258,7 +258,7 @@ class Example(Frame):
             self.setCursorLabel(self.text.index(INSERT))
 
     def readFile(self, filename):
-        f = open(filename, "r")
+        f = open(filename, "r",encoding="UTF-8")
         text = f.read()
         self.fileName = filename
         return text
@@ -511,12 +511,12 @@ class Example(Frame):
         if len(fileName) > 0:
             if ".ann" in fileName:
                 new_name = fileName
-                ann_file = open(new_name, 'w')
+                ann_file = open(new_name, 'w',encoding="UTF-8")
                 ann_file.write(content)
                 ann_file.close()
             else:
                 new_name = fileName+'.ann'
-                ann_file = open(new_name, 'w')
+                ann_file = open(new_name, 'w',encoding="UTF-8")
                 ann_file.write(content)
                 ann_file.close()
             # print "Writed to new file: ", new_name
